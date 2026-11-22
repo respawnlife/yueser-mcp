@@ -1,0 +1,90 @@
+name: Submit an MCP server
+description: Get your MCP server listed in the Qiku (器库) MCP directory
+title: "[MCP] <server name>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting. Listings are reviewed manually and are free.
+
+        **Before you submit:** make sure your server can actually be installed and used by
+        someone who has never seen it. A one-line description and a copy-paste install
+        command go a long way.
+
+  - type: input
+    id: name
+    attributes:
+      label: Server name
+      description: How it should appear in the directory. Keep it short and recognisable.
+      placeholder: e.g. GitLab MCP
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What it does
+      description: One or two sentences. What can an agent actually do with it?
+      placeholder: Read and write GitLab projects, merge requests, issues and pipelines.
+    validations:
+      required: true
+
+  - type: input
+    id: repo
+    attributes:
+      label: Public repository
+      description: A link reviewers can read. A public repo is strongly preferred.
+      placeholder: https://github.com/<owner>/<repo>
+    validations:
+      required: true
+
+  - type: dropdown
+    id: transport
+    attributes:
+      label: Transport
+      options:
+        - stdio (local process, e.g. npx or uvx)
+        - streamable-http (remote endpoint)
+        - sse (remote endpoint, legacy)
+    validations:
+      required: true
+
+  - type: input
+    id: install
+    attributes:
+      label: Install command or endpoint URL
+      description: The exact string a user would paste. For stdio, the command; for remote, the URL.
+      placeholder: npx -y @scope/package@1.2.3   or   https://example.com/mcp
+    validations:
+      required: true
+
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Permissions it needs
+      description: |
+        What can it read or write? Which credentials does it require?
+        Being explicit here speeds up review — we label permissions and will not infer them.
+      placeholder: |
+        Read: projects, merge requests, issues
+        Write: comments, issue labels
+        Credentials: a personal access token with read_api (or api for write)
+
+  - type: textarea
+    id: credentials
+    attributes:
+      label: How to obtain credentials
+      description: Step-by-step for a first-time user. Skip if the server needs none.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I maintain this server, or I am authorised to submit it.
+          required: true
+        - label: The repository is public and the install instructions work as written.
+          required: true
+        - label: I understand listings are reviewed manually and may be declined.
+          required: true

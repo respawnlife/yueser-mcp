@@ -1,0 +1,33 @@
+{
+  "name": "yueser-mcp",
+  "version": "0.1.0",
+  "description": "Remote MCP server exposing the Qiku (器库) MCP directory: probed tool lists, permission labels and paste-ready client configs.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://yueser.com/agent/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/respawnlife/yueser-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/respawnlife/yueser-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "mcp-directory",
+    "ai-tools"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build:db": "node build-db.mjs",
+    "start": "node server.mjs",
+    "start:stdio": "node server.mjs --stdio",
+    "check": "node --check server.mjs && node --check build-db.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

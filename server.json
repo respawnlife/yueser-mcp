@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.respawnlife/yueser-mcp",
+  "title": "Qiku MCP Directory",
+  "description": "Search 756 MCP servers with probed tool lists, permission labels and paste-ready configs.",
+  "version": "0.1.0",
+  "websiteUrl": "https://yueser.com/agent/",
+  "repository": {
+    "url": "https://github.com/respawnlife/yueser-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ai.yueser.com/mcp"
+    }
+  ]
+}
